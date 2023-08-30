@@ -8,6 +8,36 @@
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-      <div ></div>
+      <header >
+               <div class="flex flex-col  items-center gap-5 mt-4">
+                <h1 class="text-[45px] font-semibold ">AI Universe Hub</h1>
+                <button class="btn btn-active btn-secondary">Sort By Date</button>
+               </div>
+      </header>
+      <main class="container mx-auto ">
+        <!-- card container -->
+        <div id="card-container" class="grid md:grid-cols-2 lg:grid-cols-3 mt-9 gap-5">
+            <!-- card -->
+            <!-- <div class="card w-96 bg-base-100 shadow-xl border rounded-lg">
+                <figure><img src="./fruit6.png" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title text-2xl font-semibold">Features </h2>
+                  <ol class="list-decimal ml-4">
+                    <li>Natural language processing</li>
+                    <li>Contextual understanding</li>
+                    <li>Text generation</li>
+                  </ol>
+                  <div class=" border  mt-4"></div>
+                  <div>
+                    <h1 class="mt-2 text-2xl font-semibold">ChatGPT</h1>
+                    <h1>11/01/2022</h1>
+                    <button class="btn btn-sm mt-3 bg-pink-800 text-white">More Details</button>
+                  </div>
+                </div>
+              </div> -->
+        </div>
+        <button onclick="showAll()" id="show-all" class="btn btn-info">ShowALL</button>
+      </main>
+      <script src="./index.js"></script>
 </body>
 </html>
