@@ -52,19 +52,16 @@ const showAll = (isShow) => {
   loadData(true)
 }
 
-const handleModal = async(id) => {
+const handleModal = async (id) => {
   const modalContainer = document.getElementById('modal-container')
   const modalDIv = document.createElement('div')
-  console.log(id)
-    const res=await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
-  const modalData=await res.json()
-  console.log(modalData
-    )
-  console.log(modalData.data.accuracy.description
 
-    )
-    modalContainer.innerHTML=''
-  
+  const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
+  const modalData = await res.json()
+  const data = modalData.data;
+  console.log(data)
+  modalContainer.innerHTML = ''
+
   modalDIv.innerHTML = `
   <dialog id="my_modal_3" class="modal">
   <form method="dialog" class="modal-box">
@@ -72,20 +69,25 @@ const handleModal = async(id) => {
     <img src="${modalData.data.image_link[0]}" alt="">
     <p>${modalData.data.accuracy.description}</p>
     <h3 class="font-bold text-lg">Hello!</h3>
-
+    <ol>
+     ${data.integrations?data.integrations?.map((item)=>
+      `<li>${item}</li>`
+     ).join(""):"No data found"
+     }
+    </ol>
   </form>
 </dialog> `
   //  const integrations=modalData.data.integrations
   //  console.log(integrations.length)
   //  if(integrations.length==0){
-      
+
   //  }
   // if(modalData.integrations.length)
   modalContainer.appendChild(modalDIv)
-  
+
   const showModal1 = document.getElementById('my_modal_3')
   showModal1.showModal()
-  
-  
+
+
 }
 loadData()
